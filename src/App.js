@@ -4,8 +4,6 @@ import { FETCH_IMAGE_REQUEST } from './actions'
 import logo from './logo.svg'
 import './App.css'
 
-const pic = 'data:image/png;base64,'
-
 function App() {
   const dispatch = useDispatch()
   const { image: imageState } = useSelector((state) => state)
