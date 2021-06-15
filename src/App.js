@@ -19,11 +19,9 @@ function App() {
         </p>
         <button onClick={() => dispatch(FETCH_IMAGE_REQUEST())}> dispatch call</button>
 
-        {true && (
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-        )}
+        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+          Learn React
+        </a>
       </header>
     </div>
   )
