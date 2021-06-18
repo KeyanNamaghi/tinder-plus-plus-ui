@@ -6,8 +6,7 @@ import './App.css'
 
 function App() {
   const dispatch = useDispatch()
-  const { image: imageState } = useSelector((state) => state)
-  const { image } = imageState
+  const { image } = useSelector((state) => state.image)
   return (
     <div className="App">
       <header className="App-header">
