@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { FETCH_IMAGE_REQUEST, FETCH_STOCK_IMAGES_REMOVE, FETCH_STOCK_IMAGES_REQUEST } from './actions'
 import logo from './logo.svg'
-import { LikeButton } from './components/buttons'
+import { LikeButton, PassButton } from './components/buttons'
 import './App.css'
 
 const onClickFn = (dispatch) => {
@@ -27,8 +27,11 @@ function App() {
         <img src={images[0]?.url || logo} className="App-logo" alt="logo" />
         {/* <button onClick={() => dispatch(FETCH_IMAGE_REQUEST())}> dispatch call</button>
         <button onClick={() => onClickFn(dispatch)}> FETCH_STOCK_IMAGES_REQUEST</button> */}
+        <div className="App-buttons">
+          <PassButton onClick={() => onClickFn(dispatch)} />
 
-        <LikeButton onClick={() => onClickFn(dispatch)} />
+          <LikeButton onClick={() => onClickFn(dispatch)} />
+        </div>
       </header>
     </div>
   )

@@ -22,3 +22,8 @@
 .App-link {
   color: #61dafb;
 }
+
+.App-buttons {
+  display: flex;
+  margin: 10px;
+}
