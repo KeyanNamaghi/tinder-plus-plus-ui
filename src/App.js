@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { FETCH_IMAGE_REQUEST, FETCH_STOCK_IMAGES_REMOVE, FETCH_STOCK_IMAGES_REQUEST } from './actions'
 import logo from './logo.svg'
+import { LikeButton } from './components/buttons'
 import './App.css'
 
 const onClickFn = (dispatch) => {
@@ -24,15 +25,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={images[0]?.url || logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={() => dispatch(FETCH_IMAGE_REQUEST())}> dispatch call</button>
-        <button onClick={() => onClickFn(dispatch)}> FETCH_STOCK_IMAGES_REQUEST</button>
+        {/* <button onClick={() => dispatch(FETCH_IMAGE_REQUEST())}> dispatch call</button>
+        <button onClick={() => onClickFn(dispatch)}> FETCH_STOCK_IMAGES_REQUEST</button> */}
 
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
+        <LikeButton onClick={() => onClickFn(dispatch)} />
       </header>
     </div>
   )
