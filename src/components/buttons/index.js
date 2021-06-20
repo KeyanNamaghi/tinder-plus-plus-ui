@@ -1,4 +1,4 @@
 import { LikeButton } from './LikeButton'
 import { PassButton } from './PassButton'
-
-export { LikeButton, PassButton }
+import { SuperButton } from './SuperButton'
+export { LikeButton, PassButton, SuperButton }
