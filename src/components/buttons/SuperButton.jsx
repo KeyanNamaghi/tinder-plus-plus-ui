@@ -4,7 +4,7 @@ import './Button.css'
 
 const SuperButton = ({ onClick }) => {
   return (
-    <div className="Button PassButton">
+    <div className="Button-small">
       <button className="Button-circle" onClick={onClick}>
         <Super className="Button-symbol" />
       </button>

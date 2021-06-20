@@ -26,4 +26,5 @@
 .App-buttons {
   display: flex;
   margin: 10px;
+  align-items: center;
 }
