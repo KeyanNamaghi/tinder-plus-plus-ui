@@ -10,8 +10,8 @@ export const Super = ({ className }) => (
   >
     <defs>
       <linearGradient id="super-gradient" x1="1" x2="0" y2="1">
-        <stop stop-color="#60b6ff" />
-        <stop offset="1" stop-color="#0bceff" />
+        <stop stopColor="#46a9fe" />
+        <stop offset="1" stopColor="#1fcdf9" />
       </linearGradient>
     </defs>
     <path

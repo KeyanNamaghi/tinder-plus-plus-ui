@@ -10,8 +10,8 @@ export const Pass = ({ className }) => (
   >
     <defs>
       <linearGradient id="pass-gradient" x1="1" x2="0" y2="1">
-        <stop stop-color="#fd267d" />
-        <stop offset="1" stop-color="#ff7854" />
+        <stop stopColor="#fd267d" />
+        <stop offset="1" stopColor="#ff7854" />
       </linearGradient>
     </defs>
     <path

@@ -29,9 +29,6 @@ function* fetchStockImage() {
 
       const payload = { url: res.url }
 
-      console.log('fetched')
-      console.log(res.url)
-
       if (!res.ok) {
         console.log('res')
         throw payload

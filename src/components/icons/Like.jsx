@@ -10,9 +10,8 @@ export const Like = ({ className }) => (
   >
     <defs>
       <linearGradient id="like-gradient" x1="1" x2="0" y2="1">
-        <stop stop-color="#02e08a" />
-        <stop stop-color="#02e08a" />
-        <stop offset="1" stop-color="#69efdc" />
+        <stop stopColor="#02e08a" />
+        <stop offset="1" stopColor="#69efdc" />
       </linearGradient>
     </defs>
     <path
