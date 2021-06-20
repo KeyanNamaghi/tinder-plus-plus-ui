@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { FETCH_IMAGE_REQUEST, FETCH_STOCK_IMAGES_REMOVE, FETCH_STOCK_IMAGES_REQUEST } from './actions'
-import logo from './logo.svg'
+import { useDispatch } from 'react-redux'
+import { FETCH_STOCK_IMAGES_REMOVE, FETCH_STOCK_IMAGES_REQUEST } from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons'
+import Image from './components/image/Image'
 import './App.css'
 
 const onClickFn = (dispatch) => {
@@ -12,8 +12,6 @@ const onClickFn = (dispatch) => {
 
 function App() {
   const dispatch = useDispatch()
-  // const { image } = useSelector((state) => state.image)
-  const { images } = useSelector((state) => state.stockImages)
 
   useEffect(() => {
     for (let index = 0; index < 4; index++) {
@@ -24,9 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={images[0]?.url || logo} className="App-logo" alt="logo" />
-        {/* <button onClick={() => dispatch(FETCH_IMAGE_REQUEST())}> dispatch call</button>
-        <button onClick={() => onClickFn(dispatch)}> FETCH_STOCK_IMAGES_REQUEST</button> */}
+        <Image />
         <div className="App-buttons">
           <PassButton onClick={() => onClickFn(dispatch)} />
           <SuperButton onClick={() => onClickFn(dispatch)} />
