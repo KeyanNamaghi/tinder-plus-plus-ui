@@ -1,0 +1,39 @@
+.Image {
+  box-shadow: 0 2px 6px 0 rgba(112, 125, 134, 0.14);
+  height: 40vmin;
+  width: 40vmin;
+  border-radius: 8px;
+  user-select: none;
+  z-index: 10;
+  position: relative;
+}
+
+.Image-action-label {
+  position: absolute;
+  z-index: 100;
+  margin: 40px 20px;
+  padding: 0px 5px;
+  font-size: 32px;
+  font-weight: 600;
+  border: solid 3px;
+  border-radius: 5px;
+  transform: rotate(-20deg);
+}
+
+.Image-action-label--like {
+  color: #17db86;
+  transform: rotate(-20deg);
+}
+
+.Image-action-label--pass {
+  color: #fd3279;
+  transform: rotate(20deg);
+  right: 0;
+}
+
+.Image-element {
+  pointer-events: none;
+}
+/* PASS: #FD3279 */
+
+/* SUPER: #F4F7FA */
