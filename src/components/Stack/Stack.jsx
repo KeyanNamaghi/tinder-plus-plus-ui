@@ -4,7 +4,7 @@ import Image from '../Image/Image'
 const Stack = () => {
   return (
     <div style={{ display: 'grid' }}>
-      <Image />
+      <Image primary />
       <Image />
     </div>
   )

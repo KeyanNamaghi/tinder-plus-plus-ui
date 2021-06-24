@@ -6,7 +6,7 @@ import logo from '../../logo.svg'
 import { LikeText, PassText } from '../ImageText/ImageText'
 import './Image.css'
 
-const Image = () => {
+const Image = ({ primary = false }) => {
   const { images } = useSelector((state) => state.stockImages)
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }))
   const [likeActive, setLikeActive] = useState(false)
@@ -33,11 +33,11 @@ const Image = () => {
   })
 
   return (
-    <animated.div ref={inputRef} {...bind()} style={{ x, y }} className="Image-container">
+    <animated.div ref={inputRef} {...bind()} style={{ x, y }} className={`Image-container Image-primary`}>
       <div className="Image">
         <LikeText active={likeActive} />
         <PassText active={passActive} />
-        <img src={images[0]?.url || logo} className="Image Image-element" alt="logo" />
+        <img src={images[primary ? 0 : 1]?.url || logo} className="Image Image-element" alt="logo" />
       </div>
     </animated.div>
   )

@@ -13,6 +13,10 @@
   grid-row: 1;
 }
 
+.Image-primary {
+  z-index: 1;
+}
+
 .Image-action-label {
   position: absolute;
   z-index: 100;
