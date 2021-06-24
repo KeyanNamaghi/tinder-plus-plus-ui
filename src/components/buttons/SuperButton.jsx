@@ -1,5 +1,5 @@
 import React from 'react'
-import { Super } from '../icons'
+import { Super } from '../Icons'
 import './Button.css'
 
 const SuperButton = ({ onClick }) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Like } from '../icons'
+import { Like } from '../Icons'
 import './Button.css'
 
 const LikeButton = ({ onClick }) => {

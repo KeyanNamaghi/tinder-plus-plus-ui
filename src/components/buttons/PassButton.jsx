@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pass } from '../icons'
+import { Pass } from '../Icons'
 import './Button.css'
 
 const PassButton = ({ onClick }) => {
