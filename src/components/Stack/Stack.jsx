@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import Image from '../Image/Image'
 
-/*
-0 - active 
-1 - behind
-2 - offscreen
-*/
-
 const Stack = () => {
   const [current, setCurrent] = useState(0)
 
