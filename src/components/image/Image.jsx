@@ -17,7 +17,6 @@ const Image = ({ current, toggle, index }) => {
 
   useEffect(() => {
     if (index === (current + 2) % 4) {
-      console.log({ current, index })
       x.start(0)
     }
   }, [current])

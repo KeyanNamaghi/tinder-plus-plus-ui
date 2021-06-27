@@ -30,7 +30,6 @@ function* fetchStockImage() {
       const payload = { url: res.url }
 
       if (!res.ok) {
-        console.log('res')
         throw payload
       }
       return payload
