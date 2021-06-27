@@ -15,7 +15,7 @@ const Image = ({ index }) => {
   const { images } = stockImages
   const { cards, currentIndex } = cardState
   const cardInfo = cards[index]
-  const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }))
+  const [{ x, y }, api] = useSpring(() => ({ x: cardInfo.offscreen ? 200 + window.innerWidth : 0, y: 0 }))
 
   const [likeActive, setLikeActive] = useState(false)
   const [passActive, setPassActive] = useState(false)
@@ -64,14 +64,16 @@ const Image = ({ index }) => {
     }
   })
 
+  console.log({ index, prim: currentIndex === index % 4 })
+
   return (
     <animated.div
       ref={inputRef}
       {...bind()}
       style={{ x, y }}
       className={`Image-container ${currentIndex === index ? 'Image-primary' : ''} ${
-        currentIndex === (index + 2) % 4 ? 'Image-hidden' : `Image-${index}`
-      }`}
+        currentIndex === (index + 1) % 4 ? 'Image-primary--top' : ''
+      } ${currentIndex === (index + 2) % 4 ? 'Image-hidden' : `Image-${index}`}`}
     >
       <div className="Image">
         <LikeText active={likeActive} />

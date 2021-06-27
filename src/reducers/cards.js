@@ -12,7 +12,7 @@ let initialArray = [
   { ...cardState, primary: true },
   { ...cardState, index: 1 },
   { ...cardState, index: 2 },
-  { ...cardState, index: 3 }
+  { ...cardState, index: 3, offscreen: true }
 ]
 
 const initialState = { cards: initialArray, error: null, currentIndex: 0 }
