@@ -22,14 +22,15 @@ const Image = ({ index }) => {
   const [superActive, setSuperActive] = useState(false)
   const inputRef = useRef()
 
-  // Return to origin
   useEffect(() => {
     if (index === (currentIndex + 2) % 4) {
+      // Return to origin
       x.set(0)
       setLikeActive(false)
       setPassActive(false)
     }
 
+    // swipe left
     if (cardInfo.offscreen) {
       setLikeActive(true)
       x.start(200 + window.innerWidth)
@@ -38,7 +39,7 @@ const Image = ({ index }) => {
 
   const bind = useDrag(({ active, down, movement: [mx, my] }) => {
     api.start(() => {
-      const isGone = mx > 300 && !active
+      const isGone = mx > 200 && !active
 
       if (isGone) {
         dispatch(LIKE_CURRENT_CARD_REQUEST())
@@ -50,12 +51,14 @@ const Image = ({ index }) => {
     })
 
     if (down) {
-      if (mx > 0) {
+      if (mx > 30) {
         setLikeActive(true)
         setPassActive(false)
-      }
-      if (mx < 0) {
+      } else if (mx < -30) {
         setPassActive(true)
+        setLikeActive(false)
+      } else {
+        setPassActive(false)
         setLikeActive(false)
       }
     } else {
@@ -63,8 +66,6 @@ const Image = ({ index }) => {
       setPassActive(false)
     }
   })
-
-  console.log({ index, prim: currentIndex === index % 4 })
 
   return (
     <animated.div
