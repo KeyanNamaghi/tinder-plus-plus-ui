@@ -1,15 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from '../Image/Image'
 
 const Stack = () => {
-  const [current, setCurrent] = useState(0)
-
-  const images = [
-    <Image index={0} current={current} toggle={setCurrent} />,
-    <Image index={1} current={current} toggle={setCurrent} />,
-    <Image index={2} current={current} toggle={setCurrent} />,
-    <Image index={3} current={current} toggle={setCurrent} />
-  ]
+  const images = [<Image index={0} />, <Image index={1} />, <Image index={2} />, <Image index={3} />]
 
   return <div style={{ display: 'grid' }}>{images}</div>
 }

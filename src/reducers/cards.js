@@ -22,8 +22,10 @@ const fetchImageResponse = createReducer(initialState, {
   [LIKE_CURRENT_CARD_FAILURE.type]: (state) => {
     state.error = true
   },
-  [LIKE_CURRENT_CARD_REQUEST.type]: (state, { payload }) => {
+  [LIKE_CURRENT_CARD_REQUEST.type]: (state) => {
     state.cards[state.currentIndex].offscreen = true
+    state.currentIndex = (state.currentIndex + 1) % 4
+    state.cards[(state.currentIndex + 2) % 4].offscreen = false
   }
 })
 
