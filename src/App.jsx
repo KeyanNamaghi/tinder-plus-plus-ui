@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
-import { LikeButton } from './components/Buttons/LikeButton'
-import { PassButton } from './components/Buttons/PassButton'
-import { SuperButton } from './components/Buttons/SuperButton'
+import { LikeButton, PassButton, SuperButton } from './components/Buttons'
 import Stack from './components/Stack/Stack'
 import './App.css'
 
