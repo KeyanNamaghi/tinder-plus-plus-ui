@@ -26,3 +26,5 @@ yarn-error.log*
 
 # development recording
 /recordings
+
+.vercel
