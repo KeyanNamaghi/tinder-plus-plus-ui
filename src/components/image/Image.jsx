@@ -22,7 +22,7 @@ const Image = ({ index }) => {
 
   const [likeActive, setLikeActive] = useState(false)
   const [passActive, setPassActive] = useState(false)
-  const [superActive, setSuperActive] = useState(false)
+  // const [superActive, setSuperActive] = useState(false)
   const inputRef = useRef()
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const Image = ({ index }) => {
       setLikeActive(true)
       x.start(200 + window.innerWidth)
     }
+    // eslint-disable-next-line
   }, [currentIndex])
 
   const bind = useDrag(({ active, down, movement: [mx, my] }) => {
