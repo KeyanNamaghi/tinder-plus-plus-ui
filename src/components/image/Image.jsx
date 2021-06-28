@@ -15,7 +15,10 @@ const Image = ({ index }) => {
   const { images } = stockImages
   const { cards, currentIndex } = cardState
   const cardInfo = cards[index]
-  const [{ x, y }, api] = useSpring(() => ({ x: cardInfo.offscreen ? 200 + window.innerWidth : 0, y: 0 }))
+
+  // https://react-spring.io/common/configs
+  const config = { tension: 50, friction: 10 }
+  const [{ x, y }, api] = useSpring(() => ({ x: cardInfo.offscreen ? 200 + window.innerWidth : 0, y: 0, config }))
 
   const [likeActive, setLikeActive] = useState(false)
   const [passActive, setPassActive] = useState(false)
