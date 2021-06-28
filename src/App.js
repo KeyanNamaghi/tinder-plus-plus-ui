@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { FETCH_STOCK_IMAGES_REMOVE, FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
-import { LikeButton, PassButton, SuperButton } from './components/Buttons'
-import Stack from './components/Stack/Stack'
+import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
+// import { LikeButton, PassButton, SuperButton } from './components/Buttons'
+// import Stack from './components/Stack/Stack'
 import './App.css'
 
 const onClickFn = (dispatch) => {
@@ -23,11 +23,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Stack />
+        {/* <Stack /> */}
         <div className="App-buttons">
-          <PassButton onClick={() => onClickFn(dispatch)} />
+          {/* <PassButton onClick={() => onClickFn(dispatch)} />
           <SuperButton onClick={() => onClickFn(dispatch)} />
-          <LikeButton onClick={() => onClickFn(dispatch)} />
+          <LikeButton onClick={() => onClickFn(dispatch)} /> */}
         </div>
       </header>
     </div>
