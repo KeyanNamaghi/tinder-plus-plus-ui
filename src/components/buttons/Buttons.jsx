@@ -1,5 +1,5 @@
 import React from 'react'
-import { Like, Pass, Super } from './components/icons/Icons'
+import { Like, Pass, Super } from '../components/icons/Icons'
 import './Button.css'
 
 export const LikeButton = ({ onClick }) => {
