@@ -2,8 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
-import Stack from './Stack'
+import Image from './components/image/Image'
 import './App.css'
+
+const Stack = () => {
+  const images = [<Image index={0} />, <Image index={1} />, <Image index={2} />, <Image index={3} />]
+  return <div style={{ display: 'grid' }}>{images}</div>
+}
 
 const onClickFn = (dispatch) => {
   // dispatch(FETCH_STOCK_IMAGES_REQUEST())
