@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Stack />
+        {/* <Stack /> */}
         <div className="App-buttons">
           <PassButton onClick={() => onClickFn(dispatch)} />
           <SuperButton onClick={() => onClickFn(dispatch)} />
