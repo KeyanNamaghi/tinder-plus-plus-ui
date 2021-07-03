@@ -6,6 +6,10 @@
   user-select: none;
   z-index: 10;
   position: relative;
+  touch-action: none;
+  cursor: grab;
+  z-index: 10000;
+  user-select: none;
 }
 
 .Image-container {
