@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
-import { LIKE_CURRENT_CARD_REQUEST } from '../../actions'
+import { LIKE_CURRENT_CARD_REQUEST, FETCH_STOCK_IMAGES_UPDATE_REQUEST } from '../../actions'
 
 import logo from './logo.svg'
 import { LikeText, PassText } from './ImageText'
@@ -31,9 +31,13 @@ const Image = ({ index }) => {
       x.set(0)
       setLikeActive(false)
       setPassActive(false)
+      // TODO: This updates the image once it's reset. The if statement is a horrible hack to stop it firing before setting up
+      // Need to do this properly.
+      if (images[0]) {
+        dispatch(FETCH_STOCK_IMAGES_UPDATE_REQUEST(index))
+      }
     }
 
-    // swipe left
     if (cardInfo.offscreen) {
       setLikeActive(true)
       x.start(200 + window.innerWidth)

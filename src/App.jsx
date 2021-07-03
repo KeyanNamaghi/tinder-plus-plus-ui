@@ -11,8 +11,6 @@ const Stack = () => {
 }
 
 const onClickFn = (dispatch) => {
-  // dispatch(FETCH_STOCK_IMAGES_REQUEST())
-  // dispatch(FETCH_STOCK_IMAGES_REMOVE())
   dispatch(LIKE_CURRENT_CARD_REQUEST())
 }
 
@@ -20,7 +18,8 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    for (let index = 0; index < 4; index++) {
+    // Populate the first 3 images
+    for (let index = 0; index < 3; index++) {
       dispatch(FETCH_STOCK_IMAGES_REQUEST())
     }
   }, [dispatch])
