@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
 import { LikeButton, PassButton, SuperButton } from './Buttons'
-import Stack from 'components/Stack/Stack'
+// import Stack from 'components/Stack/Stack'
 import './App.css'
 
 const onClickFn = (dispatch) => {
