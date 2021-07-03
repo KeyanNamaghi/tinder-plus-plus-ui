@@ -17,7 +17,8 @@ const Image = ({ index }) => {
   const cardInfo = cards[index]
 
   // https://react-spring.io/common/configs
-  const config = { tension: 50, friction: 10 }
+  // const config = { tension: 50, friction: 10 }
+  const config = {}
   const [{ x, y }, api] = useSpring(() => ({ x: cardInfo.offscreen ? 200 + window.innerWidth : 0, y: 0, config }))
 
   const [likeActive, setLikeActive] = useState(false)
