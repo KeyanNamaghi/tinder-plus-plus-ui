@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from './Image'
+import Image from './components/image/Image'
 
 const Stack = () => {
   const images = [<Image index={0} />, <Image index={1} />, <Image index={2} />, <Image index={3} />]

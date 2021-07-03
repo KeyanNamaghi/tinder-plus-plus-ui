@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
-import { LIKE_CURRENT_CARD_REQUEST } from './actions'
+import { LIKE_CURRENT_CARD_REQUEST } from '../../actions'
 
 import logo from './logo.svg'
 import { LikeText, PassText } from './ImageText'
