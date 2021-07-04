@@ -8,7 +8,8 @@
 
 ## Features
 
-- [x] Analytics
+- [x] Analytics added
+- [ ] Analytics implemented
 - [ ] Liked list on LHS
 - [ ] Optional login
 - [ ] Header
