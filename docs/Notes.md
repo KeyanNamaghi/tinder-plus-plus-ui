@@ -24,7 +24,7 @@
 - [ ] Cursor on grab
 - [ ] Delay moving when pressing button
 - [ ] Icon
-- [ ] Proper name appearing in tab
+- [x] Proper name appearing in tab
 - [ ] Keyboard controls
 
 ## Testing
