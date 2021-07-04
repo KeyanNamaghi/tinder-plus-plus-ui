@@ -6,7 +6,12 @@ import Image from './components/image/Image'
 import './App.css'
 
 const Stack = () => {
-  const images = [<Image index={0} />, <Image index={1} />, <Image index={2} />, <Image index={3} />]
+  const images = [
+    <Image index={0} key="image-0" />,
+    <Image index={1} key="image-1" />,
+    <Image index={2} key="image-2" />,
+    <Image index={3} key="image-3" />
+  ]
   return <div style={{ display: 'grid' }}>{images}</div>
 }
 
