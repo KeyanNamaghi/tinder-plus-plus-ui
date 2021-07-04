@@ -8,7 +8,7 @@
 
 ## Features
 
-- [ ] Analytics
+- [x] Analytics
 - [ ] Liked list on LHS
 - [ ] Optional login
 - [ ] Header
@@ -26,6 +26,8 @@
 - [ ] Icon
 - [x] Proper name appearing in tab
 - [ ] Keyboard controls
+- [ ] Local/Dev/Prod indicators
+- [ ] Console log firebase analytics
 
 ## Testing
 
