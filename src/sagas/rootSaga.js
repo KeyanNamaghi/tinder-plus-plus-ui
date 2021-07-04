@@ -24,7 +24,7 @@ function* fetchUser() {
 function* fetchStockImage() {
   try {
     const response = yield call(async () => {
-      const url = 'https://picsum.photos/1000'
+      const url = 'https://picsum.photos/600/1200'
       const res = await fetch(url)
 
       const payload = { url: res.url }
@@ -43,7 +43,7 @@ function* fetchStockImage() {
 function* fetchStockImageUpdate({ payload }) {
   try {
     const response = yield call(async () => {
-      const url = 'https://picsum.photos/1000'
+      const url = 'https://picsum.photos/600/1200'
       const res = await fetch(url)
 
       const payload = { url: res.url }
