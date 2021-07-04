@@ -1,5 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
+const stockURL = 'https://picsum.photos/800/1200'
+
 const makeRequest = async () => {
   const url = 'https://go-rest-image.herokuapp.com/image'
   const res = await fetch(url)
@@ -24,7 +26,7 @@ function* fetchUser() {
 function* fetchStockImage() {
   try {
     const response = yield call(async () => {
-      const url = 'https://picsum.photos/600/1200'
+      const url = stockURL
       const res = await fetch(url)
 
       const payload = { url: res.url }
@@ -43,7 +45,7 @@ function* fetchStockImage() {
 function* fetchStockImageUpdate({ payload }) {
   try {
     const response = yield call(async () => {
-      const url = 'https://picsum.photos/600/1200'
+      const url = stockURL
       const res = await fetch(url)
 
       const payload = { url: res.url }
