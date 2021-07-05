@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals'
 import rootReducer from './reducers/rootReducers'
 import mySaga from './sagas/rootSaga'
 
-analytics.logEvent('login')
+analytics.logEvent('login', { name: 'loaded page' })
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
