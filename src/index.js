@@ -4,15 +4,11 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { analytics } from './firebase'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import rootReducer from './reducers/rootReducers'
 import mySaga from './sagas/rootSaga'
-
-analytics.logEvent('login', { name: 'loaded page' })
-console.log(process.env.REACT_APP_VERCEL_TEST)
 
 const sagaMiddleware = createSagaMiddleware()
 

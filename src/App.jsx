@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { analytics } from './firebase'
 import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
 import Image from './components/image/Image'
@@ -17,6 +18,7 @@ const Stack = () => {
 
 const onClickFn = (dispatch) => {
   dispatch(LIKE_CURRENT_CARD_REQUEST())
+  analytics.logEvent('pressed button', { button: 'like' })
 }
 
 function App() {
