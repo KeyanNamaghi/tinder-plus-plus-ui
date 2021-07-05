@@ -12,6 +12,8 @@ import rootReducer from './reducers/rootReducers'
 import mySaga from './sagas/rootSaga'
 
 analytics.logEvent('login', { name: 'loaded page' })
+console.log(process.env.REACT_APP_VERCEL_TEST)
+
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
