@@ -75,6 +75,8 @@ const Image = ({ index }) => {
     }
   })
 
+  const demoNames = ['Näide', 'Příklad', '예', 'Tauira']
+
   return (
     <animated.div
       ref={inputRef}
@@ -87,6 +89,7 @@ const Image = ({ index }) => {
       <div className="Image">
         <LikeText active={likeActive} />
         <PassText active={passActive} />
+        <strong className="Image-name">{demoNames[index]}</strong>
         <img src={images[index]?.url || logo} className="Image Image-element" alt="logo" />
       </div>
     </animated.div>
