@@ -24,7 +24,7 @@
 
 - [ ] Cursor on grab
 - [ ] Delay moving when pressing button
-- [ ] Icon
+- [x] Icon
 - [x] Proper name appearing in tab
 - [ ] Keyboard controls
 - [ ] Local/Dev/Prod indicators
