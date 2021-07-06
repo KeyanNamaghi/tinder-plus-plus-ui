@@ -45,11 +45,12 @@ const Image = ({ index }) => {
     // eslint-disable-next-line
   }, [currentIndex])
 
-  const bind = useDrag(({ active, down, movement: [mx, my] }) => {
-    api.start(() => {
-      const isGone = mx > 200 && !active
+  const bind = useDrag(({ active, down, movement: [mx, my], tap }) => {
+    if (tap) console.log('tap')
 
-      if (isGone) {
+    api.start(() => {
+      // Swipe right
+      if (mx > 200 && !active) {
         dispatch(LIKE_CURRENT_CARD_REQUEST())
         return { x: 200 + window.innerWidth, y: 0 }
       }

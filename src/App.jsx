@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { analytics } from './firebase'
-import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST } from './actions'
+import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST, PASS_CURRENT_CARD_REQUEST } from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
 import Image from './components/image/Image'
 import './App.css'
@@ -36,10 +38,11 @@ function App() {
       <header className="App-header">
         <Stack />
         <div className="App-buttons">
-          <PassButton onClick={() => onClickFn(dispatch)} />
+          <PassButton onClick={() => dispatch(PASS_CURRENT_CARD_REQUEST())} />
           <SuperButton onClick={() => onClickFn(dispatch)} />
           <LikeButton onClick={() => onClickFn(dispatch)} />
         </div>
+        <ToastContainer position="bottom-right" autoClose={2000} hideProgressBar />
       </header>
     </div>
   )
