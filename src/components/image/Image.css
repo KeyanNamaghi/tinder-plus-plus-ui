@@ -11,6 +11,10 @@
   user-select: none;
 }
 
+.Image:active {
+  cursor: grabbing;
+}
+
 .Image:before {
   content: '';
   display: block;

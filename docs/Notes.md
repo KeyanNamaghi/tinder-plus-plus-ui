@@ -10,7 +10,7 @@
 
 - [x] Super like
 - [x] Analytics added
-- [ ] Analytics implemented
+- [x] Analytics implemented
 - [ ] Liked list on LHS
 - [ ] Optional login
 - [ ] Header
@@ -24,7 +24,7 @@
 
 ## Nice to have
 
-- [ ] Cursor on grab
+- [x] Cursor on grab
 - [ ] Delay moving when pressing button
 - [x] Icon
 - [x] Proper name appearing in tab

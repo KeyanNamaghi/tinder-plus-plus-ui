@@ -43,18 +43,18 @@ const fetchImageResponse = createReducer(initialState, {
     state.cards[state.currentIndex].offscreen = 'like'
     state.currentIndex = (state.currentIndex + 1) % 4
     state.cards[(state.currentIndex + 2) % 4].offscreen = ''
-    analytics.logEvent('like')
+    analytics.logEvent('LIKE_CURRENT_CARD_REQUEST')
   },
   [SUPER_LIKE_CURRENT_CARD_REQUEST.type]: (state) => {
     state.cards[state.currentIndex].offscreen = 'super'
     state.currentIndex = (state.currentIndex + 1) % 4
     state.cards[(state.currentIndex + 2) % 4].offscreen = ''
-    analytics.logEvent('super')
+    analytics.logEvent('SUPER_LIKE_CURRENT_CARD_REQUEST')
   },
   [PASS_CURRENT_CARD_REQUEST.type]: (state) => {
     const message = messages[Math.floor(Math.random() * messages.length)]
     toast.error(<div className="Toast-error">{message}</div>)
-    analytics.logEvent('pass', { method: 'button' })
+    analytics.logEvent('PASS_CURRENT_CARD_REQUEST')
   }
 })
 

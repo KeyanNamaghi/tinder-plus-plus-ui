@@ -38,7 +38,7 @@ function* fetchStockImage() {
     })
     yield put({ type: 'FETCH_STOCK_IMAGES_SUCCESS', payload: { ...response } })
   } catch (e) {
-    yield put({ type: 'FETCH_STOCK_IMAGES_FAILURE' })
+    yield put({ type: 'FETCH_STOCK_IMAGES_FAILURE', payload: e })
   }
 }
 
