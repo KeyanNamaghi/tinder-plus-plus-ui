@@ -22,7 +22,13 @@ let initialArray = [
   { ...cardState, index: 3, offscreen: true }
 ]
 
-const messages = ['What is actually wrong with you?', 'That must have been a misclick', 'Who hurt you?']
+const messages = [
+  'What is actually wrong with you?',
+  'That must have been a misclick',
+  'Who hurt you?',
+  'I bet you are fun at parties',
+  'Really?'
+]
 
 const initialState = { cards: initialArray, error: null, currentIndex: 0 }
 
@@ -30,11 +36,13 @@ const fetchImageResponse = createReducer(initialState, {
   [LIKE_CURRENT_CARD_SUCCESS.type]: (state) => {},
   [LIKE_CURRENT_CARD_FAILURE.type]: (state) => {
     state.error = true
+    analytics.logEvent('like failure')
   },
   [LIKE_CURRENT_CARD_REQUEST.type]: (state) => {
     state.cards[state.currentIndex].offscreen = true
     state.currentIndex = (state.currentIndex + 1) % 4
     state.cards[(state.currentIndex + 2) % 4].offscreen = false
+    analytics.logEvent('like')
   },
   [PASS_CURRENT_CARD_REQUEST.type]: (state) => {
     const message = messages[Math.floor(Math.random() * messages.length)]
