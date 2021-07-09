@@ -8,15 +8,17 @@
 
 ## Features
 
+- [x] Super like
 - [x] Analytics added
 - [ ] Analytics implemented
 - [ ] Liked list on LHS
 - [ ] Optional login
 - [ ] Header
 - [ ] Actual photos
-- [ ] Pop up on left swipe
+- [x] Pop up on left swipe
 - [ ] Multiple photos per card
-- [ ] Name and bio on card
+- [x] Name on card
+- [ ] Bio on card
 - [ ] Interest bubble things
 - [ ] Landing page
 
