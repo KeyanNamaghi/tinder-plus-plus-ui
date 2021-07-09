@@ -25,6 +25,10 @@ const Stack = () => {
 function App() {
   const dispatch = useDispatch()
 
+  const capitalise = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   useEffect(() => {
     // Populate the first 3 images
     for (let index = 0; index < 3; index++) {
@@ -35,6 +39,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {process.env.NODE_ENV !== 'production' && (
+          <span className="App-node-env">🚀 {capitalise(process.env.NODE_ENV)}</span>
+        )}
         <Stack />
         <div className="App-buttons">
           <PassButton onClick={() => dispatch(PASS_CURRENT_CARD_REQUEST())} />

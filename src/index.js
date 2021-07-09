@@ -14,6 +14,8 @@ const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
 
+console.log(`Tinder++ ${process.env.NODE_ENV} build`)
+
 render(
   <React.StrictMode>
     <Provider store={store}>

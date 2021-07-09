@@ -29,7 +29,7 @@
 - [x] Icon
 - [x] Proper name appearing in tab
 - [ ] Keyboard controls
-- [ ] Local/Dev/Prod indicators
+- [x] Local/Dev/Prod indicators
 - [ ] Console log firebase analytics
 
 ## Testing

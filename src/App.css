@@ -24,6 +24,14 @@
   align-items: center;
 }
 
+.App-node-env {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 16px;
+  color: #fd3279;
+}
+
 .Toast-error {
   font-size: 16px;
 }
