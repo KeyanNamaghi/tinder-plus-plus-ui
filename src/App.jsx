@@ -2,8 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { analytics } from './firebase'
-import { FETCH_STOCK_IMAGES_REQUEST, LIKE_CURRENT_CARD_REQUEST, PASS_CURRENT_CARD_REQUEST } from './actions'
+import {
+  FETCH_STOCK_IMAGES_REQUEST,
+  SUPER_LIKE_CURRENT_CARD_REQUEST,
+  LIKE_CURRENT_CARD_REQUEST,
+  PASS_CURRENT_CARD_REQUEST
+} from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
 import Image from './components/image/Image'
 import './App.css'
@@ -16,11 +20,6 @@ const Stack = () => {
     <Image index={3} key="image-3" />
   ]
   return <div style={{ display: 'grid' }}>{images}</div>
-}
-
-const onClickFn = (dispatch) => {
-  dispatch(LIKE_CURRENT_CARD_REQUEST())
-  analytics.logEvent('pressed button', { button: 'like' })
 }
 
 function App() {
@@ -39,8 +38,8 @@ function App() {
         <Stack />
         <div className="App-buttons">
           <PassButton onClick={() => dispatch(PASS_CURRENT_CARD_REQUEST())} />
-          <SuperButton onClick={() => onClickFn(dispatch)} />
-          <LikeButton onClick={() => onClickFn(dispatch)} />
+          <SuperButton onClick={() => dispatch(SUPER_LIKE_CURRENT_CARD_REQUEST())} />
+          <LikeButton onClick={() => dispatch(LIKE_CURRENT_CARD_REQUEST())} />
         </div>
         <ToastContainer position="bottom-right" autoClose={2000} hideProgressBar />
       </header>

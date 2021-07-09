@@ -37,4 +37,22 @@ const PassText = ({ active }) => {
   )
 }
 
-export { LikeText, PassText }
+const SuperText = ({ active }) => {
+  const { x } = useSpring({
+    from: { opacity: 0, x: 0 },
+    x: active ? 1 : 0,
+    config: { duration: 100 }
+  })
+
+  const style = {
+    opacity: x.to({ range: [0, 1], output: [0, 1] })
+  }
+
+  return (
+    <animated.span className="Image-action-label Image-element Image-action-label--super" style={style}>
+      SUPER LIKE
+    </animated.span>
+  )
+}
+
+export { LikeText, PassText, SuperText }

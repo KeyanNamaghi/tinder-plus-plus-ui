@@ -2,6 +2,7 @@ import { createReducer } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
 import { analytics } from '../firebase'
 import {
+  SUPER_LIKE_CURRENT_CARD_REQUEST,
   LIKE_CURRENT_CARD_REQUEST,
   LIKE_CURRENT_CARD_SUCCESS,
   LIKE_CURRENT_CARD_FAILURE,
@@ -11,7 +12,7 @@ import {
 const cardState = {
   url: '',
   primary: false,
-  offscreen: false,
+  offscreen: '',
   index: 0
 }
 
@@ -19,7 +20,7 @@ let initialArray = [
   { ...cardState, primary: true },
   { ...cardState, index: 1 },
   { ...cardState, index: 2 },
-  { ...cardState, index: 3, offscreen: true }
+  { ...cardState, index: 3, offscreen: 'like' }
 ]
 
 const messages = [
@@ -39,10 +40,16 @@ const fetchImageResponse = createReducer(initialState, {
     analytics.logEvent('like failure')
   },
   [LIKE_CURRENT_CARD_REQUEST.type]: (state) => {
-    state.cards[state.currentIndex].offscreen = true
+    state.cards[state.currentIndex].offscreen = 'like'
     state.currentIndex = (state.currentIndex + 1) % 4
-    state.cards[(state.currentIndex + 2) % 4].offscreen = false
+    state.cards[(state.currentIndex + 2) % 4].offscreen = ''
     analytics.logEvent('like')
+  },
+  [SUPER_LIKE_CURRENT_CARD_REQUEST.type]: (state) => {
+    state.cards[state.currentIndex].offscreen = 'super'
+    state.currentIndex = (state.currentIndex + 1) % 4
+    state.cards[(state.currentIndex + 2) % 4].offscreen = ''
+    analytics.logEvent('super')
   },
   [PASS_CURRENT_CARD_REQUEST.type]: (state) => {
     const message = messages[Math.floor(Math.random() * messages.length)]

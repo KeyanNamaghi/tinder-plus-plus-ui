@@ -69,11 +69,10 @@
   z-index: 100;
   margin: 40px 20px;
   padding: 0px 5px;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 600;
   border: solid 3px;
   border-radius: 5px;
-  transform: rotate(-20deg);
 }
 
 .Image-action-label--like {
@@ -85,6 +84,16 @@
   color: #fd3279;
   transform: rotate(20deg);
   right: 0;
+}
+
+.Image-action-label--super {
+  color: #46a9fe;
+  transform: rotate(-20deg);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: 100px;
+  width: fit-content;
 }
 
 .Image-element {
