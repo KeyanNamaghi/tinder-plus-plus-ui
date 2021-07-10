@@ -59,7 +59,6 @@ const Image = ({ index }) => {
   const bind = useDrag(({ active, down, movement: [mx, my], tap, event }) => {
     if (tap) {
       const side = event.clientX - window.innerWidth / 2 > 0 ? 'right' : 'left'
-      console.log({ side })
       if (side === 'left') {
         left()
       } else {
@@ -85,9 +84,9 @@ const Image = ({ index }) => {
     })
 
     if (down) {
-      if (mx > 30) {
+      if (mx > 50) {
         setStateActive('like')
-      } else if (mx < -30) {
+      } else if (mx < -50) {
         setStateActive('pass')
       } else if (my < -50) {
         setStateActive('super')

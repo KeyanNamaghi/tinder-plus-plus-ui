@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-const stockURL = 'https://picsum.photos/800/1200'
+const stockURL = 'https://picsum.photos/800/1200.webp'
 
 const makeRequest = async () => {
   const url = 'https://go-rest-image.herokuapp.com/image'

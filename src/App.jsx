@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useToast } from './hooks/useToast'
 import {
   FETCH_STOCK_IMAGES_REQUEST,
   SUPER_LIKE_CURRENT_CARD_REQUEST,
@@ -10,6 +11,7 @@ import {
 } from './actions'
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
 import Image from './components/image/Image'
+import { capitalise } from './utils/utils'
 import './App.css'
 
 const Stack = () => {
@@ -24,10 +26,7 @@ const Stack = () => {
 
 function App() {
   const dispatch = useDispatch()
-
-  const capitalise = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+  const { getToast } = useToast()
 
   useEffect(() => {
     // Populate the first 3 images
@@ -35,6 +34,11 @@ function App() {
       dispatch(FETCH_STOCK_IMAGES_REQUEST())
     }
   }, [dispatch])
+
+  const handlePassClicked = () => {
+    getToast()
+    dispatch(PASS_CURRENT_CARD_REQUEST())
+  }
 
   return (
     <div className="App">
@@ -44,7 +48,7 @@ function App() {
         )}
         <Stack />
         <div className="App-buttons">
-          <PassButton onClick={() => dispatch(PASS_CURRENT_CARD_REQUEST())} />
+          <PassButton onClick={() => handlePassClicked()} />
           <SuperButton onClick={() => dispatch(SUPER_LIKE_CURRENT_CARD_REQUEST())} />
           <LikeButton onClick={() => dispatch(LIKE_CURRENT_CARD_REQUEST())} />
         </div>

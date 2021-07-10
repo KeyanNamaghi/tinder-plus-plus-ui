@@ -1,5 +1,4 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { toast } from 'react-toastify'
 import { analytics } from '../firebase'
 import {
   SUPER_LIKE_CURRENT_CARD_REQUEST,
@@ -23,14 +22,6 @@ let initialArray = [
   { ...cardState, index: 3, offscreen: 'like' }
 ]
 
-const messages = [
-  'What is actually wrong with you?',
-  'That must have been a misclick',
-  'Who hurt you?',
-  'I bet you are fun at parties',
-  'Really?'
-]
-
 const initialState = { cards: initialArray, error: null, currentIndex: 0 }
 
 const fetchImageResponse = createReducer(initialState, {
@@ -52,8 +43,6 @@ const fetchImageResponse = createReducer(initialState, {
     analytics.logEvent('SUPER_LIKE_CURRENT_CARD_REQUEST')
   },
   [PASS_CURRENT_CARD_REQUEST.type]: (state) => {
-    const message = messages[Math.floor(Math.random() * messages.length)]
-    toast.error(<div className="Toast-error">{message}</div>)
     analytics.logEvent('PASS_CURRENT_CARD_REQUEST')
   }
 })
