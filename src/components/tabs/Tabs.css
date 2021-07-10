@@ -1,0 +1,21 @@
+.Tabs {
+  z-index: 10000;
+  width: calc(100% - 10px);
+  display: flex;
+  position: absolute;
+  margin: 2px 5px;
+}
+
+.Tabs-individual {
+  flex: auto;
+  height: 4px;
+  background: #32363d;
+  opacity: 0.2;
+  border-radius: 100px;
+  margin: 4px 2px;
+}
+
+.Tabs-individual--active {
+  opacity: 1;
+  background: white;
+}

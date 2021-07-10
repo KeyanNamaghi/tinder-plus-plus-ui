@@ -11,10 +11,14 @@ import {
 import logo from './logo.svg'
 import { LikeText, PassText, SuperText } from './ImageText'
 import './Image.css'
+import { Tabs, useTabs } from '../tabs/Tabs'
 
 const Image = ({ index }) => {
+  const { position, left, right } = useTabs(4)
   const { stockImages, cards: cardState } = useSelector((state) => state)
   const dispatch = useDispatch()
+  const [stateActive, setStateActive] = useState('')
+  const inputRef = useRef()
 
   const { images } = stockImages
   const { cards, currentIndex } = cardState
@@ -27,9 +31,6 @@ const Image = ({ index }) => {
     y: cardInfo.offscreen === 'super' ? -200 - window.innerHeight : 0,
     config
   }))
-
-  const [stateActive, setStateActive] = useState('')
-  const inputRef = useRef()
 
   useEffect(() => {
     if (index === (currentIndex + 2) % 4) {
@@ -59,6 +60,11 @@ const Image = ({ index }) => {
     if (tap) {
       const side = event.clientX - window.innerWidth / 2 > 0 ? 'right' : 'left'
       console.log({ side })
+      if (side === 'left') {
+        left()
+      } else {
+        right()
+      }
     }
 
     api.start(() => {
@@ -105,6 +111,7 @@ const Image = ({ index }) => {
       } ${currentIndex === (index + 2) % 4 ? 'Image-hidden' : `Image-${index}`}`}
     >
       <div className="Image">
+        <Tabs length={4} position={position} />
         <LikeText active={stateActive === 'like'} />
         <PassText active={stateActive === 'pass'} />
         <SuperText active={stateActive === 'super'} />
