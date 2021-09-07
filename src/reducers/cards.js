@@ -7,6 +7,7 @@ import {
   LIKE_CURRENT_CARD_FAILURE,
   PASS_CURRENT_CARD_REQUEST
 } from '../actions'
+import { useToast } from '../hooks/useToast'
 
 const cardState = {
   url: '',

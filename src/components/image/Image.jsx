@@ -5,18 +5,21 @@ import { useDrag } from 'react-use-gesture'
 import {
   LIKE_CURRENT_CARD_REQUEST,
   FETCH_STOCK_IMAGES_UPDATE_REQUEST,
-  SUPER_LIKE_CURRENT_CARD_REQUEST
+  SUPER_LIKE_CURRENT_CARD_REQUEST,
+  PASS_CURRENT_CARD_REQUEST
 } from '../../actions'
 
 import logo from './logo.svg'
 import { LikeText, PassText, SuperText } from './ImageText'
 import './Image.css'
 import { Tabs, useTabs } from '../tabs/Tabs'
+import { useToast } from '../../hooks/useToast'
 
 const Image = ({ index }) => {
   const { position, left, right } = useTabs(4)
   const { stockImages, cards: cardState } = useSelector((state) => state)
   const dispatch = useDispatch()
+  const { getToast } = useToast()
   const [stateActive, setStateActive] = useState('')
   const inputRef = useRef()
 
@@ -70,6 +73,12 @@ const Image = ({ index }) => {
       if (mx > 200 && !active) {
         dispatch(LIKE_CURRENT_CARD_REQUEST())
         return { x: 200 + window.innerWidth, y: 0 }
+      }
+
+      if (mx < -200 && !active) {
+        dispatch(PASS_CURRENT_CARD_REQUEST())
+        getToast()
+        return { x: 0, y: 0 }
       }
 
       if (my < -100 && !active) {
