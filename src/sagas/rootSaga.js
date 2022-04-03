@@ -1,6 +1,8 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-const stockURL = 'https://picsum.photos/800/1200.webp'
+// const stockURL = 'https://picsum.photos/800/1200.webp'
+const stockURL =
+  'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1&api_key=ba701805-8fb9-468d-bdec-eefc0bed4fa4'
 
 const makeRequest = async () => {
   const url = 'https://go-rest-image.herokuapp.com/image'
@@ -29,7 +31,8 @@ function* fetchStockImage() {
       const url = stockURL
       const res = await fetch(url)
 
-      const payload = { url: res.url }
+      const data = await res.json()
+      const payload = { url: data[0].url }
 
       if (!res.ok) {
         throw payload
@@ -48,7 +51,8 @@ function* fetchStockImageUpdate({ payload }) {
       const url = stockURL
       const res = await fetch(url)
 
-      const payload = { url: res.url }
+      const data = await res.json()
+      const payload = { url: data[0].url }
 
       if (!res.ok) {
         throw payload

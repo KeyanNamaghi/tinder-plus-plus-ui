@@ -12,6 +12,7 @@ import {
 import { LikeButton, PassButton, SuperButton } from './components/buttons/Buttons'
 import Image from './components/image/Image'
 import { capitalise } from './utils/utils'
+// import { firestore } from './firebase'
 import './App.css'
 
 const Stack = () => {
@@ -33,6 +34,27 @@ function App() {
     for (let index = 0; index < 3; index++) {
       dispatch(FETCH_STOCK_IMAGES_REQUEST())
     }
+
+    // const fetch = async () => {
+    //   const data2 = await firestore
+    //     .collection('Accounts')
+    //     .get()
+    //     .then((snapshot) => {
+    //       console.log('snapshot', snapshot.size)
+
+    //       // get random user from snapshot
+    //       const randomUser = snapshot.docs[Math.floor(Math.random() * snapshot.size)]
+    //       console.log(randomUser.data())
+    //     })
+
+    //   const data = await (await firestore.collection('Accounts').doc('0').get()).data()
+
+    //   console.log('data')
+    //   console.log(data)
+    //   console.log('data2')
+    //   console.log(data2)
+    // }
+    // fetch()
   }, [dispatch])
 
   const handlePassClicked = () => {

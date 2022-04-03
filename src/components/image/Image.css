@@ -102,6 +102,7 @@
 
 .Image-element {
   pointer-events: none;
+  object-fit: cover;
 }
 /* PASS: #FD3279 */
 
