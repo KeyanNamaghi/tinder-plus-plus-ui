@@ -28,7 +28,7 @@ const Image = ({ index }) => {
   const cardInfo = cards[index]
 
   // https://react-spring.io/common/configs
-  const config = { tension: 40, friction: 8 }
+  const config = { tension: 100, friction: 20 }
   const [{ x, y }, api] = useSpring(() => ({
     x: cardInfo.offscreen === 'like' ? 200 + window.innerWidth : 0,
     y: cardInfo.offscreen === 'super' ? -200 - window.innerHeight : 0,
