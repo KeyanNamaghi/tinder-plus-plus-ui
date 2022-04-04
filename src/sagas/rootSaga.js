@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 // const stockURL = 'https://picsum.photos/800/1200.webp'
 const stockURL =
-  'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=3'
+  'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=5'
 
 const makeRequest = async () => {
   const url = 'https://go-rest-image.herokuapp.com/image'
